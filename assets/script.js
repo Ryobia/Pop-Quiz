@@ -19,6 +19,10 @@ let thirdAns = document.getElementById("answer3");
 let fourthAns = document.getElementById("answer4");
 
 
+
+let x = 0;
+
+
  let startPage = function() {
     first.style.display = "block";
     second.style.display = "none";
@@ -32,8 +36,9 @@ let fourthAns = document.getElementById("answer4");
     third.style.display = "none";
     fourth.style.display = "none";
 
+    
     let countdown = function(){
-        let timeLeft = 5;
+        let timeLeft = 15;
         timerEl.innerHTML = timeLeft;
     
         let timer = setInterval(function(){
@@ -49,20 +54,22 @@ let fourthAns = document.getElementById("answer4");
         }, 1000);
     }
     countdown();
-    function askQuestions(){
-        
-        // for(i = 0; i < 4; i++){
-        //     ask.textContent = questions[i];
-        //     answer1.textContent = answers1[i];
-        //     answer2.textContent = answers2[i];
-        //     answer3.textContent = answers3[i];
-        //     answer4.textContent = answers4[i];
-
-        // }
-    }
     askQuestions();
-
  }
+
+ function askQuestions(){
+    ask.textContent = questions[x];
+    answer1.textContent = answers1[x];
+    answer2.textContent = answers2[x];
+    answer3.textContent = answers3[x];
+    answer4.textContent = answers4[x];
+
+}
+
+let checkAnswer = function() {
+    
+
+}
 
  let enterScorePage = function(timeLeft) {
     first.style.display = "none";
@@ -72,6 +79,7 @@ let fourthAns = document.getElementById("answer4");
 
     let userScore = document.getElementById("score");
     userScore.innerHTML = timeLeft;
+    x = 0;
  }
 
  let scoreboardPage = function(){
@@ -86,3 +94,5 @@ startPage();
 restart.addEventListener("click", startPage);
 submitScore.addEventListener("click", scoreboardPage);
 startQuiz.addEventListener("click", quizPage);
+
+firstAns.addEventListener("click", checkAnswer);
