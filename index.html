@@ -10,15 +10,15 @@
 <body>
     
     <div class="header">
-        <button>View Highscores</button>
+        <button id="goScore">View Highscores</button>
         <p>Time: <span id="timer">0</span></p>
     </div>
 
     <section id="startScreen" class="startscreen">
         <h1>Coding Pop-Quiz</h1>
         <p>You will have 75 seconds to answer the following questions. Your score will
-            be determined based on how much time you have left upon completing all questions.
-            A 10 second penalty will be applied for each wrong answer.
+            be determined based on how much time you have left upon completing all questions. 
+             A 10 second penalty will be applied for each wrong answer.
         </p>
         <button id="startBtn" class="btn">Start Quiz</button>
     </section>
@@ -31,10 +31,10 @@
 
         <div id="answers" class="answers">
             <ol>
-                <li><button id="answer1">Answer 1</button></li>
-                <li><button id="answer2">Answer 2</button></li>
-                <li><button id="answer3">Answer 3</button></li>
-                <li><button id="answer4">Answer 4</button></li>
+                <li><button id="A" onclick="checkAnswer('A')">Answer 1</button></li>
+                <li><button id="B" onclick="checkAnswer('B')">Answer 2</button></li>
+                <li><button id="C" onclick="checkAnswer('C')">Answer 3</button></li>
+                <li><button id="D" onclick="checkAnswer('D')">Answer 4</button></li>
             </ol>
         </div>
     </section>
