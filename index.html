@@ -14,14 +14,19 @@
         <p>Time: <span id="timer">0</span></p>
     </div>
 
-    <div id="startBtn">
-
-    </div>
+    <section id="startScreen" class="startscreen">
+        <h1>Coding Pop-Quiz</h1>
+        <p>You will have 75 seconds to answer the following questions. Your score will
+            be determined based on how much time you have left upon completing all questions.
+            A 10 second penalty will be applied for each wrong answer.
+        </p>
+        <button id="startBtn" class="btn">Start Quiz</button>
+    </section>
 
 <main id="quizScreen">
     <section class="main">
         <div id="question" class="question">
-            <h1>This is the question</h1>
+            <h1 id="ask">This is the question</h1>
         </div>
 
         <div id="answers" class="answers">
@@ -35,9 +40,33 @@
     </section>
 
     <div class="trueorfalse">
-        <h2 id="trueFalse">Correct</h2>
+        <h2 id="trueFalse"></h2>
     </div>
 </main>
+
+<section id="enterScore" class="question">
+    <h1>Congratulations</h1>
+    <div>
+        <h4>Your score is: <span id="score"> </span></h3>
+
+    </div>
+    <div>
+        <p>Enter your Initials</p>
+        <input type="text">
+        <button id="submitScore" class="btn">Submit</button>
+    </div>
+</section>
+
+<section id="scoreboard" class="question">
+    <div>
+        <h1>Score Board</h1>
+        <ol id="scores">
+            <li>BA: <span id="scoresB">75</span></li>
+        </ol>
+        <button id="restart" class="btn">Go Back</button>
+        <button id="clearScores" class="btn">Clear Scores</button>
+    </div>
+</section>
 
 
 

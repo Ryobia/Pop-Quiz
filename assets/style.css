@@ -33,9 +33,19 @@
     margin-top: 100px;
 }
 
+.startscreen {
+    width: 50%;
+    margin: auto;
+    font-size: 26px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .question {
     width: 50%;
     margin: auto;
+    margin-top: 100px;
     font-size: 26px;
 }
 
@@ -71,3 +81,10 @@ button:hover {
     text-align: center;
     margin-top: 60px;
 }
+
+input {
+    background-color: rgb(167, 167, 167);
+    width: 45%;
+    height: 20px;
+}
+
