@@ -7,5 +7,5 @@
   Wrong answers are penalized and if the time runs out then they recieve a 0.
 
 https://ryobia.github.io/Pop-Quiz/
-![Preview]()
+![Preview](https://github.com/Ryobia/Pop-Quiz/blob/main/2021-02-14%20(2).png)
 
