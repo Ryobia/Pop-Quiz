@@ -45,6 +45,7 @@ let choiceC = document.getElementById("C");
 let choiceD = document.getElementById("D");
 
 let timeLeft = 75;
+let score = 0;
 
 
 let startPage = function() {
@@ -60,7 +61,9 @@ let quizPage = function() {
     third.style.display = "none";
     fourth.style.display = "none";
 
-    
+    timeLeft = 75;
+    score = 0;
+    runningQuestion = 0;
     
     countdown();
     askQuestions();
@@ -79,6 +82,7 @@ let countdown = function(){
         else {
             clearInterval(timer);
             enterScorePage(timeLeft);
+            return;
         }
     }, 1000);
 }
@@ -109,8 +113,10 @@ function checkAnswer(answer){
         runningQuestion++;
         askQuestions();
     }else{
+        score = timeLeft;
+        timeLeft = 0;
         clearInterval(timer);
-        enterScorePage();
+        enterScorePage(score);
     }
 }
 
@@ -130,10 +136,8 @@ function wrongAnswer() {
     second.style.display = "none";
     third.style.display = "block";
     fourth.style.display = "none";
-
     let userScore = document.getElementById("score");
-    userScore.innerHTML = timeLeft;
-    timeLeft = 75;
+    userScore.innerHTML = score;
  }
 
  let scoreboardPage = function(){
