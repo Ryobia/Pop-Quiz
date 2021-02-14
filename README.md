@@ -7,4 +7,5 @@
   Wrong answers are penalized and if the time runs out then they recieve a 0.
 
 https://ryobia.github.io/Pop-Quiz/
+![Preview]()
 
