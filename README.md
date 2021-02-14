@@ -6,3 +6,5 @@
   It records the users name and applies the score they recieve to their name on a scoreboard.
   Wrong answers are penalized and if the time runs out then they recieve a 0.
 
+https://ryobia.github.io/Pop-Quiz/
+
