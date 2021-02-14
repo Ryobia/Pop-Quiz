@@ -20,6 +20,8 @@
             be determined based on how much time you have left upon completing all questions. 
              A 15 second penalty will be applied for each wrong answer.
         </p>
+        <p>But first, who's playing?</p>
+        <input type="text" name="initials" id="initials" placeholder="Enter Name/Initials">
         <button id="startBtn" class="btn">Start Quiz</button>
     </section>
 
@@ -51,9 +53,8 @@
 
     </div>
     <div>
-        <p>Enter your Initials</p>
-        <input type="text">
-        <button id="submitScore" class="btn">Submit</button>
+        
+        <button id="submitScore" class="btn" >Go To Scoreboard</button>
     </div>
 </section>
 
@@ -61,7 +62,7 @@
     <div>
         <h1>Score Board</h1>
         <ol id="scores">
-            <li>BA: <span id="scoresB">75</span></li>
+            <li>BA: <span id="savedScore">75</span></li>
         </ol>
         <button id="restart" class="btn">Go Back</button>
         <button id="clearScores" class="btn">Clear Scores</button>

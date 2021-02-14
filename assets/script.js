@@ -4,7 +4,7 @@ let second = document.getElementById("quizScreen");
 let third = document.getElementById("enterScore");
 let fourth = document.getElementById("scoreboard");
 let startQuiz = document.getElementById("startBtn");
-
+let scores
 let questions = [
     { 
     question: "Arrays in Javascript can be used to store ____",
@@ -46,6 +46,9 @@ let choiceD = document.getElementById("D");
 
 let timeLeft = 75;
 let score = 0;
+
+
+let quizScores = document.getElementById("scores");
 
 
 let startPage = function() {
@@ -104,7 +107,7 @@ function askQuestions(){
 }
 
 function checkAnswer(answer){
-    if( answer == questions[runningQuestion].correct){
+    if( answer === questions[runningQuestion].correct){
         correctAnswer();
     }else{
         wrongAnswer();
@@ -132,24 +135,57 @@ function wrongAnswer() {
 
 
  let enterScorePage = function() {
+     
     first.style.display = "none";
     second.style.display = "none";
     third.style.display = "block";
     fourth.style.display = "none";
     let userScore = document.getElementById("score");
     userScore.innerHTML = score;
+    let playerInitial = document.querySelector("input[name='initials']").value;
+
+    let playerData = {
+        player: playerInitial,
+        points: score
+    }
+   
+    addScore(playerData);
  }
 
+ let addScore = function(playerData) {   
+    
+    localStorage.setItem("player", playerData.player);
+    localStorage.setItem("points", playerData.points);
+}
  let scoreboardPage = function(){
     first.style.display = "none";
     second.style.display = "none";
     third.style.display = "none";
     fourth.style.display = "block";
 
+    let newScoreName = localStorage.getItem("player");
+    let newScoreScore = localStorage.getItem("points");
+
+    let playerDataEl = document.createElement("li");
+    playerDataEl.textContent = newScoreName + ": " + newScoreScore;
+    quizScores.appendChild(playerDataEl);
+    
+
  }
+
+
 startPage();
 
 restart.addEventListener("click", startPage);
 submitScore.addEventListener("click", scoreboardPage);
 startQuiz.addEventListener("click", quizPage);
-document.getElementById("goScore").addEventListener("click", scoreboardPage);
+document.getElementById("goScore").addEventListener("click", function(){
+    first.style.display = "none";
+    second.style.display = "none";
+    third.style.display = "none";
+    fourth.style.display = "block";
+});
+clearScores.addEventListener("click", function(){
+    localStorage.clear();
+    quizScores.innerHTML = "";
+})
